@@ -1,0 +1,301 @@
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,700|Roboto+Condensed:400,700');
+
+body {
+  font-family: "Roboto Condensed", "Fira Sans Condensed", Futura, Verdana, sans-serif;
+  color: #000;
+  background-color: #567;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 13pt;
+}
+
+/*
+a:link, a:visited { color: #483D8B; }
+a:hover, a:active { color: white; background-color: black; }
+*/
+
+a, td {
+  color: #000;
+}
+a:hover {
+  text-decoration: underline !important;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: 1pt;
+}
+
+#leader {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 0px 25px #444;
+  font-family: "Fira Sans Condensed";
+  top: 0;
+}
+
+#header {
+  text-align: left;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: white;
+}
+#header #title {
+  width: 500px;
+  margin: 0 auto;
+}
+#header #photo {
+  border-radius: 50px;
+  overflow: hidden;
+  border: 2px solid #000;
+  float: left;
+  box-shadow: 0 0 10px #456;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+}
+#header h1 {
+  float: left;
+  margin: 20px 20px 10px;
+  clear: right;
+}
+#header h3 {
+  float: left;
+  margin: 0 20px;
+  color: #999;
+}
+
+#nav {
+  padding: 0 50px;
+  background-color: #123;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#nav > span {
+  padding: 10px 15px;
+  display: inline-block;
+}
+#nav > span,
+#nav > span a {
+  color: white;
+  text-decoration: none;
+  background-color: #123;
+}
+#nav > span.selected,
+#nav > span.selected a {
+  background-color: white !important;
+  color: #123 !important;
+}
+
+#nav #print {
+  position: absolute;
+  margin: 5px 0 0 15px;
+}
+
+#content {
+  margin: 0 auto;
+  width: 1000px;
+  position: relative;
+  top: 150px;
+  z-index: 1;
+}
+
+.page {
+  width: 900px;
+  overflow: hidden;
+  padding: 50px;
+  background-color: #999;
+  position: absolute;
+  display: none;
+}
+.page:first-child {
+  display: block;
+}
+
+#history {
+  width: 960px;
+  padding: 20px;
+}
+#tools {
+  width: 810px;
+  padding: 50px 95px 25px;
+}
+#skills {
+  width: 840px;
+  padding: 50px 80px 25px;
+}
+
+.column {
+  float: left;
+  width: 150px;
+  padding: 5px;
+}
+.column h3 {
+  letter-spacing: 0;
+}
+.column img {
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 2px 2px 5px #666;
+}
+.column a:hover img {
+  box-shadow: 2px 2px 25px #000;
+}
+
+.tag {
+  padding: 0 6px;
+  white-space: nowrap;
+  vertical-align: baseline;
+  /* letter-spacing: -1pt; */
+  line-height: 1.25em;
+}
+.tag a {
+  text-decoration: none;
+}
+
+.blurbs {
+  text-align: left;
+}
+.blurbs h3 {
+  border-bottom: 2px dotted #444;
+}
+.blurbs a {
+  font-weight: bold;
+}
+
+#results {
+  padding-top: 20px;
+}
+
+.section h2 {
+  background-color: #89a;
+  padding: 10px 0;
+  margin: 30px auto;
+  width: 250px;
+  border-radius: 100px;
+}
+
+.entry {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 10px 10px 0;
+}
+
+.entry .img {
+  padding: 10px 5px;
+  background-color: #345;
+  vertical-align: middle;
+  width: 510px;
+}
+
+.entry .title {
+  padding: 5px;
+  background-color: #345;
+  color: #fff;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.entry .title h4 {
+  margin: 0;
+}
+
+.entry .item {
+  padding: 5px 15px 5px 5px;
+  background-color: #999;
+  vertical-align: middle;
+  width: 430px;
+  margin-bottom: 10px;
+  font-size: 10pt;
+  text-align: left;
+}
+.entry .item .skills-table {
+  height: 90px;
+  overflow-y: auto;
+}
+.entry table.data td {
+  font-size: 10pt;
+  vertical-align: top;
+}
+.entry table.data td.key {
+  text-align: right;
+  font-weight: bold;
+  width: 60px;
+  padding-right: 5px;
+}
+.entry .filter.selected {
+  padding: 0 2px;
+  background-color: #def;
+}
+.entry .desc {
+  padding: 5px;
+}
+
+.viewall {
+  margin: 20px auto 0;
+  clear: both;
+}
+
+#zoom {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  /* opacity: 0.9; */
+  overflow: auto;
+  display: none;
+}
+#zoom #close {
+  float: right;
+  font-size: 48px;
+  margin: 5px 20px;
+}
+#zoom #close a {
+  color: #fff;
+  text-decoration: none !important;
+}
+#zoom img {
+  margin: 0 auto;
+  max-width: 80%;
+  width: auto;
+}
+
+
+@media print {
+  body {
+    width: 1080px;
+  }
+  
+  #leader {
+    position: relative;
+  }
+  
+  #content {
+    top: 0;
+  }
+  
+  table, .entry {
+    page-break-inside: avoid;
+  }
+  
+  /*
+  .section {
+    page-break-after: always;
+  }
+  */
+  
+  #footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 999px) {
+   body {
+     zoom: 0.9;
+   }
+}
