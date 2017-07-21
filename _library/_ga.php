@@ -17,6 +17,6 @@ function ga($id) {
 	
 <?php
 
-	}
+}
 	
 ?>

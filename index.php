@@ -1,6 +1,7 @@
 
-<?php include("_library.php"); ?>
-<?php include("_header.php"); ?>
+<?php include("_shell/_main.php"); ?>
+
+<?php include("_shell/_header.php"); ?>
 
 <div id="menu">
 
@@ -35,4 +36,4 @@
   <?php print_entries(); ?>
 </div>
 
-<?php include("_footer.php"); ?>
+<?php include("_shell/_footer.php"); ?>
