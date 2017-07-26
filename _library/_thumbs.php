@@ -2,7 +2,7 @@
 <?php
 
 function print_thumbs($page) {
-  global $defaults, $mysql_link, $cat;
+  global $defaults, $cat;
   
   foreach ($cat as $section => $text) {
 
@@ -21,10 +21,9 @@ function print_thumbs($page) {
       $data = array();
       $index = 0;
 
-      $sql = "SELECT * FROM portfolio WHERE section='" . $section . "' AND status='live' ORDER BY end DESC, start, id";
-      $result = mysql_query($sql, $mysql_link);
+      $result = query("SELECT * FROM portfolio WHERE section='" . $section . "' AND status='live' ORDER BY end DESC, start, id");
 
-      while ($row = mysql_fetch_object($result)) {
+      while ($row = query_next($result)) {
         if (!$row->width) $row->width = $defaults["width"];
         if (!$row->height) $row->height = $defaults["height"];
 

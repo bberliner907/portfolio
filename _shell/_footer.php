@@ -5,17 +5,10 @@
         </span>
         <img src="" border="0" />
       </div>
-      
-<?php
-
-      $date = date_create();
-      $formatted = date_format($date, "Y");
-    
-?>
   
       <div id="footer">
         <br />
-        <strong>All content &copy; <?php echo $formatted; ?>.</strong>
+        <strong>All content &copy; <?php echo date_text("Y"); ?>.</strong>
         <br /><br />
       </div>
 

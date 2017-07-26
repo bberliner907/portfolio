@@ -2,14 +2,11 @@
 <?php
 
 function print_tags($type) {
-  global $mysql_link;
-
   $data = array();
 
-  $sql = "SELECT " . $type . " FROM portfolio ORDER BY id";
-  $result = mysql_query($sql, $mysql_link);
+  $result = query("SELECT " . $type . " FROM portfolio ORDER BY id");
 
-  while ($row = mysql_fetch_object($result)) {
+  while ($row = query_next($result)) {
     $line = explode(", ", $row->$type);
 
     foreach ($line as $tag) {

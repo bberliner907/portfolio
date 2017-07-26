@@ -1,5 +1,5 @@
 
-<?php include("_shell/_main.php"); ?>
+<?php include("_global.php"); ?>
 
 <?php include("_shell/_header.php"); ?>
 

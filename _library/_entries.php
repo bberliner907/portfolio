@@ -2,17 +2,15 @@
 <?php
 
 function print_entries() {
-  global $defaults, $mysql_link, $cat;
+  global $defaults, $cat;
   
   foreach ($cat as $section => $text) {
-
     $data = array();
     $index = 0;
 
-    $sql = "SELECT * FROM portfolio WHERE section='" . $section . "' AND status='live' ORDER BY end DESC, start, id";
-    $result = mysql_query($sql, $mysql_link);
+    $result = query("SELECT * FROM portfolio WHERE section='" . $section . "' AND status='live' ORDER BY end DESC, start, id");
 
-    while ($row = mysql_fetch_object($result)) {
+    while ($row = query_next($result)) {
       if ($row->images) $row->images = explode(", ", $row->images);
       else $row->images = array($defaults["image"]);
 

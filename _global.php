@@ -1,7 +1,9 @@
 
 <?php include("../../_auth.php"); ?>
 
+<?php include("_library/_query.php"); ?>
 <?php include("_library/_ga.php"); ?>
+<?php include("_library/_date.php"); ?>
 
 <?php
 
@@ -19,22 +21,20 @@ $defaults["image"] = "Sample";
 $pages = array();
 $cat = array();
 
-$sql = "SELECT * FROM pages WHERE site='" . $site . "' ORDER BY id";
-$result = mysql_query($sql, $mysql_link);
+$result = query("SELECT * FROM pages WHERE site='" . $site . "' ORDER BY id");
 
-while ($row = mysql_fetch_object($result)) {
+while ($row = query_next($result)) {
   $pages[$row->page] = $row;
 }
 
-$sql = "SELECT * FROM categories ORDER BY id";
-$result = mysql_query($sql, $mysql_link);
+$result = query("SELECT * FROM categories ORDER BY id");
 
-while ($row = mysql_fetch_object($result)) {
+while ($row = query_next($result)) {
   $cat[$row->section] = $row->title;
 }
 
 $viewall = '<div class="viewall">';
-$viewall .= '<strong><a href="#" onclick="display([\'.entry\', \'.category\']); return false;">view all</a></strong>';
+$viewall .= '<strong><a href="#" onclick="display([\'.entry\', \'.category\']); return false;">View All</a></strong>';
 $viewall .= '</div>';
 
 ?>
