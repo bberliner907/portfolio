@@ -11,6 +11,8 @@ auth("brennberliner");
 
 $site = "portfolio";
 
+$assets = "2017-07-29-05";
+
 $defaults = array();
 $defaults["type"] = ".png";
 $defaults["width"] = 500; // 1024
@@ -33,18 +35,21 @@ while ($row = query_next($result)) {
   $cat[$row->section] = $row->title;
 }
 
-$viewall = '<div class="viewall">';
-$viewall .= '<strong><a href="#" onclick="display([\'.entry\', \'.category\']); return false;">View All</a></strong>';
-$viewall .= '</div>';
-
 ?>
+
+<?php include("_library/_tagclass.php"); ?>
+<?php include("_library/_viewall.php"); ?>
 
 <?php include("_library/_thumbs.php"); ?>
 
 <?php include("_library/_tag.php"); ?>
 <?php include("_library/_tags.php"); ?>
 
+<?php include("_library/_search.php"); ?>
+
+<?php include("_library/_blurbs.php"); ?>
+
 <?php include("_library/_entry.php"); ?>
 <?php include("_library/_entries.php"); ?>
 
-<?php include("_library/_blurbs.php"); ?>
+

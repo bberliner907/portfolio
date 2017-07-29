@@ -18,7 +18,7 @@
       $func = "print_" . $data->type;
       $func($page);
 
-      if ($data->type != "blurbs") echo $viewall;
+      if ($data->type != "blurbs") view_all();
 
 ?>
 

@@ -43,8 +43,10 @@ h1, h2, h3, h4 {
   background-color: white;
 }
 #header #title {
-  width: 500px;
+  width: 460px;
   margin: 0 auto;
+  overflow: hidden;
+  padding: 5px 0;
 }
 #header #photo {
   border-radius: 50px;
@@ -98,14 +100,14 @@ h1, h2, h3, h4 {
   margin: 0 auto;
   width: 1000px;
   position: relative;
-  top: 150px;
+  top: 160px;
   z-index: 1;
 }
 
 .page {
   width: 900px;
   overflow: hidden;
-  padding: 50px;
+  padding: 50px 50px 25px;
   background-color: #999;
   position: absolute;
   display: none;
@@ -114,10 +116,11 @@ h1, h2, h3, h4 {
   display: block;
 }
 
-#history {
+.page.thumbs {
   width: 960px;
   padding: 20px;
 }
+
 #tools {
   width: 810px;
   padding: 50px 95px 25px;
@@ -155,6 +158,59 @@ h1, h2, h3, h4 {
   text-decoration: none;
 }
 
+.search form {
+  margin-top: 25px;
+}
+.search input {
+  padding: 10px;
+  font-size: 16pt;
+  border: 0;
+  margin-right: 0;
+  width: 250px;
+}
+.search button {
+  font-size: 14pt;
+  padding: 12px;
+  background-color: #123;
+  cursor: pointer;
+  margin-left: 0;
+  border: 0;
+  color: #fff;
+  top: -1px;
+  position: relative;
+}
+.search #clear {
+  display: none;
+  position: relative;
+  left: 260px;
+  font-size: 16pt;
+}
+.search #clear a {
+  text-decoration: none;
+}
+
+#searched {
+  padding-top: 25px;
+}
+
+.searchitem .left {
+  min-width: 95px;
+  margin-left: 230px;
+  display: inline-block;
+  text-align: right;
+  padding: 10px;
+}
+.searchitem .right {
+  width: 400px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  padding: 15px;
+}
+.searchitem a {
+  font-weight: bold;
+}
+
 .blurbs {
   text-align: left;
 }
@@ -163,6 +219,9 @@ h1, h2, h3, h4 {
 }
 .blurbs a {
   font-weight: bold;
+}
+.blurbs p {
+  margin-left: 20px;
 }
 
 #results {

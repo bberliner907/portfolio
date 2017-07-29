@@ -2,7 +2,7 @@
 <?php
 
 function print_tag($tag, $span = null, $style = null, $suffix = null) {
-  $tagClass = str_replace(' ', '_', $tag);
+  $tagClass = tag_class($tag);
 
   if ($span || $style) echo '<span class="' . $span . '" style="' . $style . '">';
   

@@ -78,8 +78,8 @@ function print_entry_right($entry) {
   <div class="item">
 
     <table border="0" cellspacing="10" cellpadding="0" width="100%" class="data">
-      <tr><td class="key">Owner:</td><td><?php echo $entry->agency; ?></td></tr>
-      <tr><td class="key">Date:</td><td><?php echo $entry->date; ?></td></tr>
+      <tr><td class="key">Owner:</td><td class="owner"><?php echo $entry->agency; ?></td></tr>
+      <tr><td class="key">Date:</td><td class="date"><?php echo $entry->date; ?></td></tr>
       
 <?php
 
@@ -87,7 +87,7 @@ function print_entry_right($entry) {
         $count = count($arr);
         
         foreach ($arr as $i => $t) {
-          $tagClass = str_replace(' ', '_', $t);
+          $tagClass = tag_class($t);
         
           $classes = 'filter filter-' . $tagClass;
           $suffix = ($i < $count - 1) ? ', ' : '';
@@ -113,7 +113,7 @@ function print_entry_right($entry) {
             echo '<div style="float: left; width: 50%;">';
           }
           
-          $tagClass = str_replace(' ', '_', $skills[$s]);
+          $tagClass = tag_class($skills[$s]);
           $classes = 'filter filter-' . $tagClass;
           
           print_tag($skills[$s], $classes, null, "<br>");
@@ -159,10 +159,10 @@ function print_entry($entry) {
   
   $tagClasses = "";
   foreach ($tools as $t) {
-    $tagClasses .= (' ' . str_replace(' ', '_', $t));
+    $tagClasses .= ' ' . tag_class($t);
   }
   foreach ($skills as $s) {
-    $tagClasses .= (' ' . str_replace(' ', '_', $s));
+    $tagClasses .= ' ' . tag_class($s);
   }
 
 ?>
