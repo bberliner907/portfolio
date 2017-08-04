@@ -27,22 +27,23 @@ function print_entries() {
       $index++;
     }
 
-  ?>
+?>
   
     <div class="section" id="<?php echo $section; ?>">
   
-      <div class="category category-<?php echo $section; ?>" style="display: none;">
+      <div class="category category-<?php echo $section; ?>" 
+        style="<?php if (page_clean() != "results") { echo "display: none;"; } ?>">
         <a name="<?php echo $section; ?>"></a>
         <h2><?php echo $text; ?></h2>
       </div>
 
-  <?php
+<?php
 
       for ($x = 0; $x < count($data); $x++) {
         print_entry($data[$x]);
       }
   
-  ?>
+?>
 
     </div>
 

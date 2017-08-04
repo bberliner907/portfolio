@@ -83,7 +83,7 @@ function print_entry_right($entry) {
       
 <?php
 
-      $func = function($arr) {
+      $print = function($arr) {
         $count = count($arr);
         
         foreach ($arr as $i => $t) {
@@ -98,7 +98,7 @@ function print_entry_right($entry) {
 
       echo '<tr><td class="key">Tools:</td><td>';
       
-      $func($tools);
+      $print($tools);
       
       echo '</td></tr>';
       echo '<tr><td class="key">Skills:</td><td>';
@@ -125,7 +125,7 @@ function print_entry_right($entry) {
         
         echo '</div>';
       } else {
-        $func($skills);
+        $print($skills);
       }
       
       echo '</td></tr>';
@@ -169,7 +169,7 @@ function print_entry($entry) {
 
   <div class="entry <?php echo $entry->section . $tagClasses; ?>" 
     id="<?php echo $name; ?>" 
-    style="display:none;">
+    style="<?php if (page_clean() != "results") { echo "display: none;"; } ?>">
 
     <div class="entry-left" style="float: left;">
       <?php print_entry_left($entry); ?>

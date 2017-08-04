@@ -1,6 +1,7 @@
 
 <?php include("../../_auth.php"); ?>
 
+<?php include("_library/_page.php"); ?>
 <?php include("_library/_query.php"); ?>
 <?php include("_library/_ga.php"); ?>
 <?php include("_library/_date.php"); ?>
@@ -11,12 +12,12 @@ auth("brennberliner");
 
 $site = "portfolio";
 
-$assets = "2017-07-29-05";
+$assets = "2017-08-03-01";
 
 $defaults = array();
 $defaults["type"] = ".png";
-$defaults["width"] = 500; // 1024
-$defaults["height"] = 360; // 738
+$defaults["width"] = 500;
+$defaults["height"] = 360;
 $defaults["link"] = "N/A";
 $defaults["image"] = "Sample";
 

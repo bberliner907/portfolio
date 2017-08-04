@@ -112,9 +112,6 @@ h1, h2, h3, h4 {
   position: absolute;
   display: none;
 }
-.page:first-child {
-  display: block;
-}
 
 .page.thumbs {
   width: 960px;

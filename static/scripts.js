@@ -1,6 +1,14 @@
 
-function toggle(to) {
+var results = ['.entry', '.category'];
+var qs = "?page=";
+var pos = 0;
+
+function toggle(to, pop) {
   if ($('#' + to).css("display") == "none") {
+    if (!pop) {
+      history.pushState(null, null, qs + to);
+      ga('send', 'pageview', location.pathname + location.search);
+    }
     $('.entry, .category, #footer').hide();
     $('.page:visible').fadeOut(250);
     $('#' + to).fadeIn(250);
@@ -9,22 +17,46 @@ function toggle(to) {
   }
 }
 
-function display(show) {
-  $('.entry, .category').hide();
-  $(".filter").removeClass("selected");
-  $('.page').fadeOut(250, function() {
-    for (var s = 0; s < show.length; s++) {
-      $(show[s]).fadeIn(250);
-    }
-    $("#footer").show();
-    $(document).scrollTop(0);
+function categories(tag) {
+  var classes = [];
+  $(tag).parent('.section').each(function() {
+    classes[classes.length] = "." + $(this).children('.category').attr("class").split(' ').join('.');
   });
-  $("#nav > span").removeClass('selected');
-  if (show[0].indexOf(".") == 0) {
-    var filter = '.filter-' + show[0].substr(1, show[0].length);
-    $(filter).addClass("selected");
+  return classes;
+}
+
+function display(show, pop) {
+  if (show) {
+    if (show.length == 1 && show[0].indexOf(".") == 0) show = show.concat(categories(show[0]));
+    if (!pop) {
+      history.pushState({ "show": show }, null, qs + "results");
+      ga('send', 'pageview', location.pathname + location.search);
+    }
+    $('.entry, .category').hide();
+    $(".filter").removeClass("selected");
+    $('.page').fadeOut(250, function() {
+      for (var s = 0; s < show.length; s++) {
+        $(show[s]).fadeIn(250);
+      }
+      $("#footer").show();
+      $(document).scrollTop(0);
+    });
+    $("#nav > span").removeClass('selected');
+    if (show[0].indexOf("#") == -1) {
+      var filter = '.filter-' + show[0].substr(1, show[0].length);
+      $(filter).addClass("selected");
+    }
   }
 }
+
+$(window).on('popstate', function(e) {
+  var index = location.search.lastIndexOf(qs);
+  var to;
+  if (index == -1) to = $('.page:first-child').attr("id");
+  else to = location.search.substr(index + qs.length, location.search.length);
+  if (to == "results") display((e.originalEvent.state.show || results), true);
+  else toggle(to, true);
+});
 
 function item(id) {
   var entry = "#" + id;
@@ -83,8 +115,6 @@ function swap(id, to) {
   var chosen = "images/" + to;
   $(".entry img[name=" + id + "]").attr("src", chosen).parent().attr("href", chosen);
 }
-
-var pos = 0;
 
 function expand(to) {
   var chosen = $(".entry img[name=" + to + "]").attr("src");

@@ -8,15 +8,18 @@
 <?php
 
   foreach ($pages as $page => $data) {
+    $style = (page_active($page) && page_clean() != "results") ? "display: block;" : "";
   
 ?>
 
-    <div class="page <?php echo $data->type; ?>" id="<?php echo $page; ?>">
+    <div class="page <?php echo $data->type; ?>" 
+      id="<?php echo $page; ?>"
+      style="<?php echo $style; ?>">
 
 <?php
 
-      $func = "print_" . $data->type;
-      $func($page);
+      $load = "print_" . $data->type;
+      $load($page);
 
       if ($data->type != "blurbs") view_all();
 
