@@ -67,7 +67,7 @@ function item(id) {
   elem.css("display", "block");
   
   var img = elem.find("img");
-  var orig = $("img[name=" + id + "]");
+  var orig = $(".thumbs img[name=" + id + "]");
   img.attr("src", orig.attr("src"));
   img.attr("width", Math.ceil(orig.attr("width") / 1.5));
   img.attr("height", Math.ceil(orig.attr("height") / 1.5));
@@ -112,7 +112,7 @@ function lookup(terms) {
 }
 
 function swap(id, to) {
-  var chosen = "images/" + to;
+  var chosen = "images/large/" + to;
   $(".entry img[name=" + id + "]").attr("src", chosen).parent().attr("href", chosen);
 }
 

@@ -23,5 +23,4 @@
 
 ?>
   
-  <!-- <a href="#" onclick="window.print(); return false;" title="Print" id="print"><img src="print.png"></a> -->
 </div>

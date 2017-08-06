@@ -12,7 +12,7 @@ auth("brennberliner");
 
 $site = "portfolio";
 
-$assets = "2017-08-03-01";
+$assets = "2017-08-05-01";
 
 $defaults = array();
 $defaults["type"] = ".png";

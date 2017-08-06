@@ -11,11 +11,6 @@ body {
   font-size: 13pt;
 }
 
-/*
-a:link, a:visited { color: #483D8B; }
-a:hover, a:active { color: white; background-color: black; }
-*/
-
 a, td {
   color: #000;
 }
@@ -89,11 +84,6 @@ h1, h2, h3, h4 {
 #nav > span.selected a {
   background-color: white !important;
   color: #123 !important;
-}
-
-#nav #print {
-  position: absolute;
-  margin: 5px 0 0 15px;
 }
 
 #content {
@@ -302,7 +292,6 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 100%;
   background-color: #000;
-  /* opacity: 0.9; */
   overflow: auto;
   display: none;
 }

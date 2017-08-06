@@ -5,18 +5,18 @@ function print_entry_left($entry) {
   global $defaults;
 
   $name = $entry->name;
-  $image = $name . "_1" . $defaults["type"];
+  $image = "images/large/" . $name . "_1" . $defaults["type"];
 
 ?>
 
   <div class="img">
 
     <a name="<?php echo $name; ?>" 
-      href="images/<?php echo $image; ?>" 
+      href="<?php echo $image; ?>" 
       onclick="expand('<?php echo $name; ?>'); return false;"
       target="_blank">
       <img name="<?php echo $name; ?>" 
-        src="images/<?php echo $image; ?>" 
+        src="<?php echo $image; ?>" 
         border="0" 
         width="<?php echo $entry->width; ?>" 
         height="<?php echo $entry->height; ?>">
@@ -36,7 +36,7 @@ function print_entry_left($entry) {
           for ($y = 0; $y < count($entry->images); $y++) {
             $filename = $name . "_" . ($y + 1) . $defaults["type"];
             echo "<option value=\"" . $filename . "\"";
-            if ($filename == $image) echo " SELECTED";
+            if ($filename == $image) echo " selected";
             echo ">" . ($y + 1) . ": " . trim($entry->images[$y], "\"") . "</option>\n";
           }
 

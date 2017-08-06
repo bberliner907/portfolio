@@ -33,7 +33,7 @@ function print_thumbs($page) {
 
       for ($x = 0; $x < count($data); $x++) {
         $name = $data[$x]->name;
-        $image = $name . "_1" . $defaults["type"];
+        $image = "images/small/" . $name . $defaults["type"];
 
 ?>
 
@@ -41,7 +41,7 @@ function print_thumbs($page) {
           onclick="display(['#<?php echo $name; ?>', '.category-<?php echo $section; ?>']); return false;"
           title="<?php echo $data[$x]->title; ?>">
           <img name="<?php echo $name; ?>" 
-            src="images/<?php echo $image; ?>" 
+            src="<?php echo $image; ?>" 
             border="0" 
             width="<?php echo round($data[$x]->width / 3.5); ?>" 
             height="<?php echo round($data[$x]->height / 3.5); ?>">
