@@ -43,8 +43,8 @@ function print_thumbs($page) {
           <img name="<?php echo $name; ?>" 
             src="<?php echo $image; ?>" 
             border="0" 
-            width="<?php echo round($data[$x]->width / 3.5); ?>" 
-            height="<?php echo round($data[$x]->height / 3.5); ?>">
+            width="<?php echo round($data[$x]->width*0.225); ?>" 
+            height="<?php echo round($data[$x]->height*0.225); ?>">
         </a>
 
 <?php

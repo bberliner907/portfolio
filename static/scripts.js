@@ -78,7 +78,7 @@ function item(id) {
     if ($(this).hasClass("searchlink")) $(this).html($(entry + " .title h4").html());
   });
   
-  elem.find(".searchcat").html($(entry).parents(".section").find("h2").html());
+  elem.find(".searchcat").html($(entry).find("td.owner").html());
   elem.find(".searchdate").html($(entry).find("td.date").html());
   $("#searched").append(elem);
 }

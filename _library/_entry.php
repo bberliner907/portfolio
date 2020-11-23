@@ -9,6 +9,21 @@ function print_entry_left($entry) {
 
 ?>
 
+  <style type="text/css">
+    @media print, screen and (min-width: 600px) {
+  	  .entry .img img[name=<?php echo $name; ?>] {
+  	    width: <?php echo $entry->width; ?>px;
+        height: <?php echo $entry->height; ?>px;
+  	  }
+  	}
+  	@media screen and (max-width: 600px) {
+  	  .entry .img img[name=<?php echo $name; ?>] {
+  	    width: <?php echo round($entry->width/1.33); ?>px;
+        height: <?php echo round($entry->height/1.33); ?>px;
+  	  }
+  	}
+  </style>
+
   <div class="img">
 
     <a name="<?php echo $name; ?>" 
@@ -17,9 +32,7 @@ function print_entry_left($entry) {
       target="_blank">
       <img name="<?php echo $name; ?>" 
         src="<?php echo $image; ?>" 
-        border="0" 
-        width="<?php echo $entry->width; ?>" 
-        height="<?php echo $entry->height; ?>">
+        border="0">
     </a>
     
 <?php
@@ -171,11 +184,11 @@ function print_entry($entry) {
     id="<?php echo $name; ?>" 
     style="<?php if (page_clean() != "results") { echo "display: none;"; } ?>">
 
-    <div class="entry-left" style="float: left;">
+    <div class="entry-left">
       <?php print_entry_left($entry); ?>
     </div>
     
-    <div class="entry-right" style="float: right;">
+    <div class="entry-right">
       <?php print_entry_right($entry); ?>
     </div>
 

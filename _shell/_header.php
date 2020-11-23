@@ -7,6 +7,7 @@
     <title>Brenn Berliner - Web Development Portfolio</title>
     
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.65">
     
     <link rel="stylesheet" type="text/css" href="static/styles.css?<?php echo $assets; ?>" />
   

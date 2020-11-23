@@ -118,9 +118,11 @@ h1, h2, h3, h4 {
 }
 
 .column {
-  float: left;
-  width: 150px;
+  /* float: left; */
+  display: inline-block;
+  width: 120px;
   padding: 5px;
+  vertical-align: top;
 }
 .column h3 {
   letter-spacing: 0;
@@ -228,6 +230,13 @@ h1, h2, h3, h4 {
   overflow: hidden;
   margin-bottom: 20px;
   padding: 10px 10px 0;
+}
+
+.entry .entry-left {
+  float: left;
+}
+.entry .entry-right {
+  float: right;
 }
 
 .entry .img {
@@ -339,8 +348,58 @@ h1, h2, h3, h4 {
   }
 }
 
-@media screen and (max-width: 999px) {
-   body {
-     zoom: 0.9;
-   }
+@media screen and (max-width: 1020px) {
+  #content,
+  .searchitem .left,
+  .searchitem .right {
+    width: auto !important;
+    padding: 10px !important;
+    margin: 10px auto !important;
+  }
+  
+  .page {
+    width: auto !important;
+    margin: -20px 10px 0 0 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .page#search {
+    margin: -20px 0 0 0 !important;
+    position: relative;
+  }
+  
+  .searchitem {
+    text-align: left !important;
+  }
+  .searchitem .right {
+    max-width: 50% !important;
+  }
+  
+  .entry .entry-left,
+  .entry .entry-right {
+    float: none !important;
+    margin: 10px auto !important;
+    display: inline-block !important;
+  }
+   
+  #nav {
+    padding: 0 10px !important;
+  }
+  
+  .tag {
+    white-space: normal !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #nav > span {
+    padding: 10px !important;
+  }
+  
+  .entry .img {
+    width: 400px !important;
+  }
+  .entry .item {
+    width: 380px !important;
+  }
 }

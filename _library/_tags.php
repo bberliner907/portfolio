@@ -4,7 +4,7 @@
 function print_tags($type) {
   $data = array();
 
-  $result = query("SELECT " . $type . " FROM portfolio ORDER BY id");
+  $result = query("SELECT " . $type . " FROM portfolio WHERE status!='offline' ORDER BY id");
 
   while ($row = query_next($result)) {
     $line = explode(", ", $row->$type);
@@ -25,7 +25,7 @@ function print_tags($type) {
     $count = $data[$tag];
     
     $size = ($type == "skills") ? 6.25 : 10.5;
-    $modifier = ($type == "skills") ? 1.75 : 2.25;
+    $modifier = ($type == "skills") ? 1.5 : 2.25;
     
     $style = "font-size: " . ($size + ($count * $modifier)) . "pt;";
     
